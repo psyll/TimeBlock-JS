@@ -59,6 +59,7 @@ The `TimeBlock` function can be used in a variety of applications where time int
 
 ## Usage examples
 
+
 ### No parameters - Get the current time block for current date and time.
 
 ```js
@@ -85,6 +86,17 @@ Output:
     nextStart: "2023-02-19 15:22:02.000",
     nextEnd: "2023-02-19 15:22:02.999"
 }
+```
+
+### Using named parameters
+
+```js
+TimeBlock({
+  interval: 10,
+  ms: false,
+  date: new Date(),
+  from: '2022-01-01T00:00:00.000Z'
+});
 ```
 
 ### Generate a time block of 1 hour interval for current date time
