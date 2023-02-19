@@ -13,7 +13,7 @@
 
 </p>
 
-The `TimeBlock()` function generates time blocks based on a given interval and date by calculating the start and end datetimes of the time block, as well as the start and end dates of the previous and next time blocks.
+The `TimeBlock()` function generates time blocks based on a given interval and date by calculating the id, start and end datetimes of the time block, as well as the start and end dates of the previous and next time blocks.
 
 ## What is time block?
 
