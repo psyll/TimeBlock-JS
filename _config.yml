@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+show_downloads: true
+title: TimeBlock JS
+title-separator: /
+description: The TimeBlock() function generates time blocks based on a given interval and date by calculating the start and end datetimes of the time block

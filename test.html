@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeBlock JS Test</title>
+    <style>
+        body{
+            font-family:monospace;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <script src="TimeBlock.js"></script>
+
+    <script>
+console.log(TimeBlock());
+const intervals = [
+        { name: "1 second", size: 1 },
+        { name: "5 seconds", size: 5 },
+        { name: "10 seconds", size: 10 },
+        { name: "15 seconds", size: 15 },
+        { name: "30 seconds", size: 30 },
+        { name: "1 minute", size: 60 },
+        { name: "3 minutes", size: 180 },
+        { name: "5 minutes", size: 300 },
+        { name: "15 minutes", size: 900 },
+        { name: "30 minutes", size: 1800 },
+        { name: "45 minutes", size: 2700 },
+        { name: "1 hour", size: 3600 },
+        { name: "2 hours", size: 7200 },
+        { name: "3 hours", size: 10800 },
+        { name: "4 hours",  size: 14400 },
+        { name: "1 day", size: 86400 },
+        { name: "1 week", size: 604800 },
+        { name: "1 month", size: 2592000 },
+        { name: "3 months", size: 7776000 },
+        { name: "6 months", size: 15552000 },
+        { name: "1 year", size: 31536000 },
+];
+        // Get current date
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const day = now.getDate().toString().padStart(2, '0');
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        // Write current date and time
+        document.write('<h1>Current date and time: ' + formattedDateTime + '</h1>');
+        // Show data for all intervals
+        intervals.forEach(async (interval) => {
+            data = TimeBlock(interval.size);
+            document.write("<b>Intrerval: " + interval.name +  " (" + interval.size + ")</b>");
+            document.write("<br>");
+            document.write("Block ID: " + data.id);
+            document.write("<br>");
+            document.write("Block ID (in year): " + data.idYear);
+            document.write("<br>");
+            document.write("Block start: " + data.start);
+            document.write("<br>");
+            document.write("Block end: " + data.end);
+            document.write("<br>");
+            document.write("Prev block start: " + data.prevStart);
+            document.write("<br>");
+            document.write("Prev block end: " + data.prevEnd);
+            document.write("<br>");
+            document.write("Next block start: " + data.nextStart);
+            document.write("<br>");
+            document.write("Next block end: " + data.nextEnd);
+            document.write("<br><br>");
+        });
+    </script>
+</body>
+</html>
